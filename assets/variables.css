@@ -1,0 +1,33 @@
+/* variables.css */
+:root {
+	/*Background Color*/
+	--bg-primary: #1d8848;
+	--bg-light-primary: #00ae5a;
+	--bg-primary-shadow: #D3F3CD;
+	--bg-white: #ffffff;
+	--bg-gray-white: #f8f8f8;
+
+	/* Colors */
+	--primary: 29, 136, 72;
+	--black: 14, 17, 17;
+	--white: 255, 255, 255;
+	--form-height: 40px;
+
+	/* Text */
+	--text-primary: #1d8848;
+	--text-light-primary: #00ae5a;
+	--text-color: #333;
+	--text-light: #ffffff;
+	--text-muted: #939995;	
+
+	/* Fonts */
+	--font-main: "Inter", sans-serif;
+	--font-heading: 'Georgia', serif;
+	
+	/* Borders */
+	--border-radius-4: 4px;
+	--border-color: #ddd;
+	--border-base-width: 1px;
+	--border-color-light: #D9D9D9;
+
+}
