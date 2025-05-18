@@ -7,118 +7,175 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css -->
     <!-- css -->
+     <link rel="stylesheet" href="./assets/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/fonts/inter/stylesheet.css">
     <link rel="stylesheet" href="./assets/fonts/icomoon-2/style.css">
+    	<style type="text/css">
+		@theme {
+			/*background*/
+			--bg-primary: #1d8848;
+			--bg-light-primary: #00ae5a;
+			--bg-primary-shadow: #D3F3CD;
+			--bg-white: #ffffff;
+			--bg-gray-white: #f8f8f8;
+
+			/* Colors */
+			--primary: 29, 136, 72;
+			--black: 14, 17, 17;
+			--white: 255, 255, 255;
+			--form-height: 40px;
+
+			/* Text */
+			--text-primary: #1d8848;
+			--text-light-primary: #00ae5a;
+			--text-color: #333;
+			--text-light: #ffffff;
+			--text-muted: #939995;
+			--text-input: #676767;
+
+			/* Fonts */
+			--font-main: "Inter", sans-serif;
+			--font-heading: 'Georgia', serif;
+
+			/* Borders */
+			--border-radius-4: 4px;
+			--border-color: #ddd;
+			--border-base-width: 1px;
+			--border-color-light: #D9D9D9;
+		}
+
+		@layer base {
+			:root {
+				--bg-primary: #1d8848;
+				--bg-light-primary: #00ae5a;
+			}
+		}
+
+		@layer utilities {
+			.bg-primary {
+				background-color: var(--bg-primary);
+			}
+			.bg-light-primary {
+				background-color: var(--bg-light-primary);
+			}			
+			.text-primary {
+				color: var(--bg-primary);
+			}
+			.border-primary {
+				border-color: var(--bg-primary);
+			}
+		}
+
+    </style>
 
     <!-- New CSS -->
-    <link rel="stylesheet" href="./assets/main.css">
-	<link rel="stylesheet" href="./assets/structure/footer.css">
+    <!-- <link rel="stylesheet" href="./assets/main.css">
+	<link rel="stylesheet" href="./assets/structure/footer.css"> -->
 
 	<title>Footer</title>
 </head>
 
 <body>
-<footer class="footer">
-    <div class="container">
-        <div class="footer_wrapper flex">
-
-            <div class="footer_column">
-                <a href="#!" class="footer-logo">
-                    <img src="./assets/img/logo_footer.png">
-                </a>
-                <div class="footer-social">
-                    <span>Follow Us:</span>
-                    <ul class="flex items-center">
-                        <li>
-                            <a href="#"><img src="./assets/img/facebook.png" alt="facebook"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="./assets/img/instagram.png" alt="instagram"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="./assets/img/linkedin.png" alt="linkedin"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="./assets/img/twitter.png" alt="twitter"></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-security">
-                    <span>Pay Securely With:</span>
-                    <ul>
-                        <li>
-                            <img src="./assets/img/security1.png" alt="security">
-                        </li>
-                        <li>
-                            <img src="./assets/img/security2.png" alt="security">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer_column">
-                <div class="footer-menu">
-                    <h3>Customer service</h3>
-                    <ul>
-                        <li><a href="">My GoodGross</a></li>
-                        <li><a href="">Help Center</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href="">Submit a Dispute</a></li>
-                        <li><a href="">Policies & Rules</a></li>
-                        <li><a href="">Returns</a></li>
-                        <li><a href="">Feedback</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer_column">
-                <div class="footer-menu">
-                    <h3>Buy on GoodGross</h3>
-                    <ul class="mb-3">
-                        <li><a href="">All Categories</a></li>
-                        <li><a href="">Wholesale Products</a></li>
-                        <li><a href="">Retail Product</a></li>
-                        <li><a href="">Request for Quotation</a></li>
-                    </ul>
-                    <h3>Logistics Broker</h3>
-                    <ul>
-                        <li><a href="">Get Registered</a></li>
-                        <li><a href="">Available Logistics</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer_column">
-                <div class="footer-menu">
-                    <h3>Sell on GoodGross</h3>
-                    <ul>
-                        <li><a href="">My Posts</a></li>
-                        <li><a href="">Manufacturers&Suppliers</a></li>
-                        <li><a href="">Suppliers</a></li>
-                        <li><a href="">Retailers</a></li>
-                        <li><a href="">Police & Rules</a></li>
-                    </ul>
-                </div>
-            </div>
-            
+<footer class="pt-8 bg-gray-white">
+  <div class="container">
+    <!-- Footer Wrapper -->
+    <div class="flex flex-wrap gap-8 mb-8">
+      
+      <!-- First Column -->
+      <div class="flex-1 min-w-[200px] flex-[1_0_200px] max-w-[480px]">
+        <a href="#!" class="block mb-12">
+          <img src="./assets/img/logo_footer.png" class="w-full h-auto">
+        </a>
+        
+        <div class="flex items-center pb-4 mb-4 border-b border-[#b7b7b7] flex-wrap">
+          <span class="text-[#676767] text-xl font-normal leading-[130%] mr-3 mb-2">Follow Us:</span>
+          <ul class="flex items-center gap-4 flex-wrap">
+            <li><a href="#"><img src="./assets/img/facebook.png" alt="facebook" class="w-12 h-12"></a></li>
+            <li><a href="#"><img src="./assets/img/instagram.png" alt="instagram" class="w-12 h-12"></a></li>
+            <li><a href="#"><img src="./assets/img/linkedin.png" alt="linkedin" class="w-12 h-12"></a></li>
+            <li><a href="#"><img src="./assets/img/twitter.png" alt="twitter" class="w-12 h-12"></a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <p>© 2023 GoodGross Inc.
-                <span>
-                    <a href="#" class="footer-link">Product Listing Policy</a>
-                </span> |
-                <span>
-                    <a href="#" class="footer-link">Intellectual Property Protection</a>
-                </span> |
-                <span>
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                </span> |
-                <span>
-                    <a href="#" class="footer-link">Terms of Use</a>
-                </span>
-            </p>
+        
+        <div class="flex items-center flex-wrap">
+          <span class="text-[#b7b7b7] text-base font-normal leading-[130%] mr-3 mb-2">Pay Securely With:</span>
+          <ul class="flex items-center gap-4 flex-wrap">
+            <li><img src="./assets/img/security1.png" alt="security" class="h-[34px] w-auto"></li>
+            <li><img src="./assets/img/security2.png" alt="security" class="h-[34px] w-auto"></li>
+          </ul>
         </div>
+      </div>
+      
+      <!-- Customer Service Column -->
+      <div class="flex-1 min-w-[200px]">
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold leading-[130%] text-black mb-3">Customer service</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">My GoodGross</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Help Center</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Contact Us</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Submit a Dispute</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Policies & Rules</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Returns</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Buy on GoodGross Column -->
+      <div class="flex-1 min-w-[200px]">
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold leading-[130%] text-black mb-3">Buy on GoodGross</h3>
+          <ul class="mb-3 space-y-3">
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">All Categories</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Wholesale Products</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Retail Product</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Request for Quotation</a></li>
+          </ul>
+          
+          <h3 class="text-2xl font-semibold leading-[130%] text-black mb-3">Logistics Broker</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Get Registered</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Available Logistics</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sell on GoodGross Column -->
+      <div class="flex-1 min-w-[200px]">
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold leading-[130%] text-black mb-3">Sell on GoodGross</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">My Posts</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Manufacturers&Suppliers</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Suppliers</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Retailers</a></li>
+            <li><a href="#" class="text-xl font-normal leading-[130%] text-[#676767] hover:text-[#00bf63] hover:underline transition-all duration-200">Police & Rules</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+    
+    <!-- Footer Bottom -->
+    <div class="pt-4 mt-4 border-t border-[#b7b7b7]">
+      <p class="text-lg font-normal leading-[130%] text-[#676767] text-center">
+        © 2023 GoodGross Inc.
+        <span>
+          <a href="#" class="text-[#676767] hover:text-[#00bf63] hover:underline">Product Listing Policy</a>
+        </span> |
+        <span>
+          <a href="#" class="text-[#676767] hover:text-[#00bf63] hover:underline">Intellectual Property Protection</a>
+        </span> |
+        <span>
+          <a href="#" class="text-[#676767] hover:text-[#00bf63] hover:underline">Privacy Policy</a>
+        </span> |
+        <span>
+          <a href="#" class="text-[#676767] hover:text-[#00bf63] hover:underline">Terms of Use</a>
+        </span>
+      </p>
+    </div>
+  </div>
 </footer>
 
 </body>

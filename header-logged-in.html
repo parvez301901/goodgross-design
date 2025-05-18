@@ -6,28 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
+	<!-- New CSS -->
+	<link rel="stylesheet" href="./assets/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/fonts/inter/stylesheet.css">
     <link rel="stylesheet" href="./assets/fonts/icomoon-2/style.css">
+	<style type="text/css">
+		@theme {
+			/*background*/
+			--bg-primary: #1d8848;
+			--bg-light-primary: #00ae5a;
+			--bg-primary-shadow: #D3F3CD;
+			--bg-white: #ffffff;
+			--bg-gray-white: #f8f8f8;
 
-    <!-- New CSS -->
-    <link rel="stylesheet" href="./assets/main.css">
-    <link rel="stylesheet" href="./assets/structure/header.css">
+			/* Colors */
+			--primary: 29, 136, 72;
+			--black: 14, 17, 17;
+			--white: 255, 255, 255;
+			--form-height: 40px;
+
+			/* Text */
+			--text-primary: #1d8848;
+			--text-light-primary: #00ae5a;
+			--text-color: #333;
+			--text-light: #ffffff;
+			--text-muted: #939995;
+			--text-input: #676767;
+
+			/* Fonts */
+			--font-main: "Inter", sans-serif;
+			--font-heading: 'Georgia', serif;
+
+			/* Borders */
+			--border-radius-4: 4px;
+			--border-color: #ddd;
+			--border-base-width: 1px;
+			--border-color-light: #D9D9D9;
+		}
+
+		@layer base {
+			:root {
+				--bg-primary: #1d8848;
+				--bg-light-primary: #00ae5a;
+			}
+		}
+
+		@layer utilities {
+			.bg-primary {
+				background-color: var(--bg-primary);
+			}
+			.bg-light-primary {
+				background-color: var(--bg-light-primary);
+			}			
+			.text-primary {
+				color: var(--bg-primary);
+			}
+			.border-primary {
+				border-color: var(--bg-primary);
+			}
+		}
+
+
+    </style>
+    <!-- <link rel="stylesheet" href="./assets/structure/header.css"> -->
     
     <title>Home</title>
 </head>
 
 <body>
     <header>
-		<div class="header_top relative">
+		<div class="header_top relative py-5 z-[9999] bg-primary">
 			<div class="container">
-				<div class="header_top_wrapper relative flex items-center space-between">
+				<div class="relative flex items-center space-between">
 					<div>
-						<a href="#" class="header_logo">
+						<a href="#" class="h-auto block w-full">
 							<img class="img-fluid" src="./assets/img/logo.svg" alt="logo">
 						</a>
 					</div>
 
-					<div class="header_search relative">
+					<!-- <div class="flex flex-1 relative">
 						<div class="select_search_option">
 							<select name="select_search_option">
 								<option value="wholesale">Wholesale</option>
@@ -35,38 +93,167 @@
 								<option value="all">All</option>
 							</select>
 						</div>
-						<input type="text" placeholder="Search for ...">
-						<div class="header_search_action">
-							<i class="icon-camera"></i>
-							<i class="icon-search"></i>
-						</div>						
+						<input class="h-[56px] rounded-[50px]" type="text" placeholder="Search for ...">
+						<div class="header_search_action flex items-center absolute">
+							<i class="flex justify-center items-center icon-camera"></i>
+							<i class="flex justify-center items-center icon-search"></i>
+						</div>
+					</div> -->
+
+					<div class="flex flex-1 relative">
+						<div class="absolute top-2 left-11">
+							<select name="select_search_option" class="text-[var(--text-input)] text-[15px] font-medium border border-[#74b08c] py-2 pl-2.5 pr-1.5 rounded-xl">
+								<option value="wholesale">Wholesale</option>
+								<option value="retailer">Retailer</option>
+								<option value="all">All</option>
+							</select>
+						</div>
+
+						<input type="text" placeholder="Search for ..."	class="h-14 rounded-[50px] border-none py-0 px-[135px] mx-9 w-[60%] text-[var(--text-input)] text-[25px] font-medium bg-white"
+						>
+						<div class="absolute flex items-center right-9 top-1 bottom-1">
+							<div class="flex justify-center items-center h-12 w-12 bg-[var(--bg-primary)] text-white text-[32px] rounded-full mx-1">
+								<i class="icon-camera"></i>
+							</div>
+							<div class="flex justify-center items-center h-12 w-12 bg-[var(--bg-primary)] text-white text-[32px] rounded-full mx-1">
+								<i class="icon-search"></i>
+							</div>
+						</div>
 					</div>
 
-					<div class="header_auth header_link">
-						<i class="icon-user"></i>
-						<span>The Logz</span>
+					<div class="header_auth header_link relative ml-6 flex justify-center items-center group">
+						<i class="icon-user text-[27px] text-white mb-0 mr-2.5"></i>
+						<span class="text-white text-xl">The Logz</span>
 
-						<div class="user_menu">
-							<div class="user_menu_wrapper">
-								<div class="user_greetings text-left">Hi, the Logz!</div>
+						<div class="invisible absolute top-full z-[999] w-[250px] min-h-[300px] pt-2.5 opacity-0 transition-all duration-300 ease-linear group-hover:visible group-hover:opacity-100 left-1/2 -translate-x-1/2">
+							<div class="relative z-[999] w-[175px] bg-white p-[30px_40px] h-full rounded-[20px] shadow-[2px_2px_5px_rgba(0,0,0,0.2)] before:content-[''] before:w-4 before:h-4 before:bg-white before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1 before:rotate-45 before:z-[9999]">
+								<div class="block font-inter font-normal text-[20px] leading-5 text-[#15ad52] text-center mb-2.5">
+									Hi, the Logz!
+								</div>
 								<ul class="mt-4">
-									<li><a href="#">My Goodgross</a></li>
-									<li><a href="#">Account</a></li>
-									<li><a href="#">Orders</a></li>
-									<li><a href="#">Saved</a></li>
-									<li><a href="#">My Posts</a></li>
-									<li><a href="#">Messages</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">My Goodgross</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">Account</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">Orders</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">Saved</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">My Posts</a></li>
+									<li><a href="#" class="block font-inter font-normal text-[15px] leading-[10px] text-[#676767] mb-[18px] hover:text-light-primary hover:underline">Messages</a></li>
 								</ul>
 							</div>
 						</div>
-
+						
 					</div>
 
-					<div class="header_post">
-						<a>Post for free</a>
+					<div class="ml-6">
+						<a class="text-white text-base font-medium leading-5 px-1.5 py-2 rounded-[10px] border-2 border-white bg-transparent transition-all duration-500 ease-linear">
+							Post for free
+						</a>
 					</div>
 
-					<div class="header-livechat header_link">
+					<div class="header-livechat header_link flex flex-col justify-center items-center cursor-pointer relative ml-6">
+						<!-- Badge -->
+						<span class="absolute -top-4 -right-2 text-white text-xs border border-white rounded-full bg-[#d42338] px-[7px] py-[3px]">99</span>
+
+						<!-- Chat Icon -->
+						<i class="icon-liveChat text-[27px] text-white"></i>
+						<span class="text-white text-xs font-normal leading-[130%]">Live Chat</span>
+
+						<!-- Notification Dropdown -->
+						<div class="notification_holder notification_chat_box absolute top-[60px] w-[295px] min-h-[300px] pt-4 pb-[60px] invisible opacity-0 transition-all duration-300 ease-linear bg-white border-2 border-[#D9D9D9] rounded-[20px] shadow-[0px_1px_14px_1px_rgba(0,0,0,0.1)] z-[999]">
+							
+							<div class="notification_header flex justify-between px-[10px] pb-[10px] border-b-2 border-[#dfdfdf]">
+								<div class="notifcation_action">
+									<span class="close text-primary text-xs bg-[url('./assets/img/x1.svg')] bg-no-repeat bg-left bg-[length:26%] pl-[25px] py-[1px]">Close</span>
+								</div>
+								<div>
+									<a href="#" class="clear text-primary text-xs underline">Clear all notes</a>
+								</div>
+							</div>
+
+							<!-- Notifications Wrapper -->
+							<div class="notification_wrapper max-h-[300px] overflow-y-auto scrollbar-thin">
+
+								<!-- Quote Notification -->
+								<div class="notification_list px-[7px] py-[10px] border-b border-[#dfdfdf]">
+									<div class="notification_top flex justify-between items-center">
+										<div class="notification_type_quote text-base text-primary bg-[url('./assets/img/quote.svg')] bg-no-repeat bg-left bg-[length:32%] pl-[34px] py-[5px]">Quote:</div>
+										<div class="notification_action_btn">
+											<span class="threedots block w-6 h-6 bg-[url('./assets/img/threedot.svg')] bg-no-repeat bg-center bg-[length:62%] rounded-full relative group/dots">
+												<div class="threedots_actions hidden group-hover/dots:block absolute left-[-152px] bg-[#F7F7F7] border border-[#EAEAEA] rounded-[10px] text-primary z-10">
+													<div class="clear-message text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-t-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/trash-green.svg')] before:bg-no-repeat before:bg-cover">
+													Clear this message
+													</div>
+													<div class="go-to-source text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-b-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/share-green.svg')] before:bg-no-repeat before:bg-cover">
+													Go to source
+													</div>
+												</div>
+											</span>
+										</div>
+									</div>
+									<div class="notification_text text-[10px] text-color py-[5px]">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+									</div>
+									<div class="notification_time text-[10px] text-muted py-[3px]">
+										Few minutes ago
+									</div>
+								</div>
+
+								<!-- Promotion Notification -->
+								<div class="notification_list px-[7px] py-[10px] border-b border-[#dfdfdf]">
+									<div class="notification_top flex justify-between items-center">
+										<div class="notification_type_promotion text-base text-primary bg-[url('./assets/img/promotion.png')] bg-no-repeat bg-left bg-[length:21%] pl-[34px] py-[5px]">Promotion:</div>
+										<div class="notification_action_btn">
+											<span class="threedots block w-6 h-6 bg-[url('./assets/img/threedot.svg')] bg-no-repeat bg-center bg-[length:62%] rounded-full relative group/dots">
+											<div class="threedots_actions hidden group-hover/dots:block absolute left-[-152px] bg-[#F7F7F7] border border-[#EAEAEA] rounded-[10px] text-primary z-10">
+												<div class="clear-message text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-t-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/trash-green.svg')] before:bg-no-repeat before:bg-cover">
+												Clear this message
+												</div>
+												<div class="go-to-source text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-b-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/share-green.svg')] before:bg-no-repeat before:bg-cover">
+												Go to source
+												</div>
+											</div>
+											</span>
+										</div>
+									</div>
+									<div class="notification_text text-[10px] text-color py-[5px]">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+									</div>
+									<div class="notification_time text-[10px] text-muted py-[3px]">
+										Few minutes ago
+									</div>
+								</div>
+
+								<!-- Chat Notification -->
+								<div class="notification_list px-[7px] py-[10px]">
+									<div class="notification_top flex justify-between items-center">
+										<div class="notification_type_chat flex text-base text-primary py-[5px]">
+											<img class="mr-[10px] rounded-full" src="./assets/img/chat-img.jpg" /> 
+											Message From Buyer:
+										</div>
+										<div class="notification_action_btn">
+											<span class="threedots block w-6 h-6 bg-[url('./assets/img/threedot.svg')] bg-no-repeat bg-center bg-[length:62%] rounded-full relative group/dots">
+												<div class="threedots_actions hidden group-hover/dots:block absolute left-[-152px] bg-[#F7F7F7] border border-[#EAEAEA] rounded-[10px] text-primary z-10">
+													<div class="clear-message text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-t-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/trash-green.svg')] before:bg-no-repeat before:bg-cover">
+													Clear this message
+													</div>
+													<div class="go-to-source text-xs px-[12px] py-[5px] pl-[25px] relative hover:bg-[#E1E1E1] hover:rounded-b-[9px] before:content-[''] before:absolute before:left-[6px] before:top-[4px] before:w-[15px] before:h-[15px] before:bg-[url('./assets/img/share-green.svg')] before:bg-no-repeat before:bg-cover">
+													Go to source
+													</div>
+												</div>
+											</span>
+										</div>
+									</div>
+									<div class="notification_text text-[10px] text-color py-[5px]">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+									</div>
+									<div class="notification_time text-[10px] text-muted py-[3px]">
+										Few minutes ago
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="header-livechat header_link flex justify-center items-center">
 						<span>99</span>
 						<i class="icon-liveChat"></i>
 						<span>Live Chat</span>
@@ -81,6 +268,7 @@
 									<a href="#" class="clear">Clear all notes</a>
 								</div>
 							</div>
+
 							<div class="notification_wrapper">
 
 								<div class="notification_list">
@@ -92,6 +280,7 @@
 													<div class="clear-message">Clear this message</div>
 													<div class="go-to-source">Go to source</div>
 												</div>
+
 											</span>
 										</div>
 									</div>
@@ -144,11 +333,11 @@
 								</div>
 							</div>
 
-
 						</div>
 
-					</div>
-					<div class="header_notification_icon header_link">
+					</div> -->
+
+					<!-- <div class="header_notification_icon header_link flex justify-center items-center">
 						<span>4</span>
 						<i class="icon-bell"></i>
 						<span>Notice</span>
@@ -225,21 +414,22 @@
 									</div>
 								</div>
 							</div>
-
-
 						</div>
+					</div> -->
 
-
-					</div>
-
-					<div class="shopping-icon header_link">
+					<!-- <div class="shopping-icon header_link flex justify-center items-center">
 						<i class="icon-cart"></i>
 						<span>Cart</span>
+					</div> -->
+
+					<div class="shopping-icon header_link flex flex-col justify-center items-center cursor-pointer ml-6">
+						<i class="icon-cart text-[27px] text-white"></i>
+						<span class="text-white text-xs font-normal leading-[130%]">Cart</span>
 					</div>
 					
-					<div class="header-whishlist header_link">
-						<i class="icon-heart"></i>
-						<span>Saved</span>
+					<div class="header-whishlist header_link flex flex-col justify-center items-center ml-6">
+						<i class="icon-heart text-[27px] text-white"></i>
+						<span class="text-white text-xs font-normal leading-[130%]">Saved</span>
 					</div>
 
 				</div>
@@ -247,36 +437,43 @@
 			</div>
 		</div>
 
-		<div class="header_middle">
+
+		<div class="header_middle bg-light-primary">
 			<div class="container">
-				<div class="header_middle_wrapper">
-					<ul>
-						<li><a href="">Today's Deals</a></li>
-						<li><a href="">Coupons</a></li>
-						<li><a href="">Top 100 Goods</a></li>
-						<li><a href="">Discount</a></li>
+				<div class="header_middle_wrapper flex">
+					<ul class="flex py-1.5">
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Today's Deals</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Coupons</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Top 100 Goods</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Discount</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
-		<div class="header_bottom">
+		<div class="header_bottom block border-b-3 border-[#b7b7b7]">
 			<div class="container">
-				<div class="header_bottom_wrapper">
-					<ul class="flex items-center justify-center relative">
+				<div class="header_bottom_wrapper relative">
+					<ul class="flex items-center justify-center">
 						<li>
-							<a href="">Retail market</a>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Retail market</a>
 						</li>
 						<li>
-							<a href="">Home</a>							
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Home</a>
 						</li>
 						<li>
-							<a class="active-link" href="">
-								Manufacturers &amp; Suppliers
-							</a>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Manufacturers & Suppliers</a>
 						</li>
 						<li>
-							<a href="">Viewed</a>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Viewed</a>
 						</li>
 					</ul>
 				</div>

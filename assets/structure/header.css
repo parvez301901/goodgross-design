@@ -1,28 +1,10 @@
-.header_top {
-	z-index: 9999;
-	padding: 20px 0;
-	background-color: var(--bg-primary);
-}
-.header_top_wrapper {
-
-}
-.header_logo {
-	height: auto;
-	display: block;
-	width: 100%;
-}
-.header_search {
-	display: flex;
-	flex: 1;
-}
 .header_search input {
-	height: 56px;
 	border-radius: 50px;
 	border: none;
 	padding: 0 125px 0 135px;
 	margin: 0 35px;
-	color: var(--text-light);
-	font-size: 15px;
+	color: var(--text-input);
+	font-size: 25px;
 	font-weight: 500;
 	width: 60%;
 }
@@ -32,7 +14,7 @@
 	left: 45px;
 }
 .select_search_option select {
-	color: var(--text-muted);
+	color: var(--text-input);
 	font-size: 15px;
 	font-weight: 500;
 	border: 1px solid #74b08c;
@@ -40,12 +22,9 @@
 	border-radius: 12px;
 }
 .header_search_action {
-	position: absolute;
 	right: 35px;
 	top: 4px;
 	bottom: 4px;
-	display: flex;
-	align-items: center;
 }
 .header_search_action i {
 	height: 48px;
@@ -54,24 +33,14 @@
 	font-size: 32px;
 	color: #ffffff;
 	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	margin: 0 4px;
-}
-.header_link {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 24px;
-	color: #ffffff;
 }
 .header_link i {
 	font-size: 27px;
 	color: white;
 	margin-bottom: 0px;
 }
+
 .header_auth i {
 	margin-bottom: 0;
 	margin-right: 10px;
@@ -88,7 +57,7 @@
 }
 .header_post a {
 	color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 	line-height: 20px;
 	padding: 8px 6px;

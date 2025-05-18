@@ -18,12 +18,13 @@
 	--text-light-primary: #00ae5a;
 	--text-color: #333;
 	--text-light: #ffffff;
-	--text-muted: #939995;	
+	--text-muted: #939995;
+	--text-input: #676767;
 
 	/* Fonts */
 	--font-main: "Inter", sans-serif;
 	--font-heading: 'Georgia', serif;
-	
+
 	/* Borders */
 	--border-radius-4: 4px;
 	--border-color: #ddd;
