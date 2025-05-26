@@ -1,0 +1,23 @@
+.copy_link_content.show_copy {
+	opacity: 1;
+	visibility: visible;
+}
+.sold .sold-count:hover .sold-items {
+    opacity: 1;
+    visibility: visible;
+}
+.product-stars-icons:hover .product-stars-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+.likeOne {
+    display: none;
+}
+.like-full {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.ilike-none {
+    display: none;
+}

@@ -14,6 +14,19 @@ $(document).ready(function () {
         $(this).find('.threedots').toggleClass('active');
     });
 
+    /*product retail - url to copy*/
+	$(".copy_link_content_btn_link").on("click", function () {
+		text = window.location.href;
+		const el = document.createElement('textarea');
+		el.value = text;
+		document.body.appendChild(el);
+		el.select();
+		document.execCommand('copy');
+		document.body.removeChild(el);
+	});
+
+	const currentUrl = window.location.href;
+	$('.copy_val').val(currentUrl);
 
 });
 
@@ -114,15 +127,6 @@ $('body').on('click', function (e) {
     $(".copy_link_content").removeClass("show_copy")
 })
 
-$(".copy_link_content_btn_link").on("click", function () {
-    text = window.location.href;
-    const el = document.createElement('textarea');
-    el.value = text;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-})
 window.onload = function () {
     setTimeout(() => {
         $('.copy_val').val(window.location.href)

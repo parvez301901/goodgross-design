@@ -1,7 +1,6 @@
 
 * {
 	font-family: "Inter", sans-serif;
-	line-height: 1.2;
 }
 .container {
 	max-width: 1470px;
@@ -40,3 +39,4 @@ background-color: rgb(var(--color-gray3));
 	left: 0;
 	right: 0;
 }
+/**/
