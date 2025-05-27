@@ -12,6 +12,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/fonts/inter/stylesheet.css">
     <link rel="stylesheet" href="./assets/fonts/icomoon-2/style.css">
+	<link rel="stylesheet" href="./assets/libs/jquery.fancybox.min.css"/>
+	<link rel="stylesheet" href="./assets/libs/swiper.min.css">
 	<style type="text/css">
 		@theme {
 			/*background*/
@@ -59,7 +61,10 @@
 			}
 			.bg-light-primary {
 				background-color: var(--bg-light-primary);
-			}			
+			}
+			.back-primary {
+				background-color: var(--bg-primary);
+			}
 			.text-primary {
 				color: var(--bg-primary);
 			}
@@ -374,9 +379,442 @@
 
 			<div class="flex flex-col md:flex-row gap-4">
 				
-				<div class="md:w-1/2 rounded-lg">
-					<h2 class="text-xl font-bold mb-2">Column 1</h2>
-					<p>Content for the first column goes here.</p>
+				<div class="md:w-1/2 rounded-lg relative">
+
+					<!-- Tab Buttons -->
+					<div class="flex space-x-4 mb-4 justify-end">
+						<button id="tab1Btn" class="tab-btn h-[20px] w-[20px] bg-white border-[2px] bg-blue-600 text-gray-800 rounded"></button>
+						<button id="tab2Btn" class="tab-btn h-[20px] w-[20px] bg-white border-[2px] bg-gray-200 text-gray-800 rounded"></button>
+					</div>
+
+					<!-- Tab Contents -->
+					<div id="tab1" class="tab-content block p-4 bg-white">
+
+						<div class="slider-wrapper flex gap-6">
+							<!-- Slider main container -->
+							<div class="swiper-container gallery overflow-hidden relative">
+								<!-- Additional required wrapper -->
+								<div class="swiper-wrapper">
+									<!-- Slides -->
+									<div class="swiper-slide">
+										<a href="#" class="main-image tile" data-scale="1.5" isClicked="false"
+											data-image="./assets/img/tesla1.jpg">
+											<div class="zoom-box"></div>
+										</a>
+										<div class="zoom-image"></div>
+										<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1" class="zoomin">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+													stroke="#091123" stroke-width="2" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="main-image tile" data-scale="1.5" isClicked="false"
+											data-image="./assets/img/tesla2.jpg">
+											<div class="zoom-box"></div>
+
+										</a>
+										<div class="zoom-image"></div>
+										<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1" class="zoomin">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+													stroke="#091123" stroke-width="2" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="main-image tile" data-scale="1.5" isClicked="false"
+											data-image="./assets/img/tesla3.jpg">
+											<div class="zoom-box"></div>
+
+										</a>
+										<div class="zoom-image"></div>
+										<a href="./assets/img/tesla3.jpg" data-fancybox="gallery-1" class="zoomin">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+													stroke="#091123" stroke-width="2" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="main-image tile" data-scale="1.5" isClicked="false"
+											data-image="./assets/img/tesla4.jpg">
+											<div class="zoom-box"></div>
+										</a>
+										<div class="zoom-image"></div>
+										<a href="./assets/img/tesla4.jpg" data-fancybox="gallery-1" class="zoomin">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+													stroke="#091123" stroke-width="2" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="main-image tile" data-scale="1.5" isClicked="false"
+											data-image="./assets/img/tesla5.jpg">
+											<div class="zoom-box"></div>
+										</a>
+										<div class="zoom-image"></div>
+										<a href="./assets/img/tesla5.jpg" data-fancybox="gallery-1" class="zoomin">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+													stroke="#091123" stroke-width="2" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+								</div>
+
+								<!-- Add Arrows -->
+								<div class="y-btn y-prev" id="prev-4">
+									<i class="icon-right"></i>
+								</div>
+
+								<div class="y-btn y-next" id="next-4">
+									<i class="icon-right"></i>
+								</div>
+							</div>
+							<!-- Slider thumbnail container -->
+							<div class="swiper-container thumbs pt-[20px] pb-[20px] h-[420px] w-[25.8%] overflow-hidden relative">
+								<!-- Additional required wrapper -->
+								<div class="swiper-wrapper">
+									<!-- Slides -->
+									<div class="swiper-slide">
+										<img src="./assets/img/tesla1.jpg" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="./assets/img/tesla2.jpg" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="./assets/img/tesla3.jpg" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="./assets/img/tesla4.jpg" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="./assets/img/tesla5.jpg" alt="">
+									</div>
+
+								</div>
+
+								<!-- Add Arrows -->
+								<div class="top-[-71px] bottom-0 absolute inline-flex z-[3] bg-[#eee] rotate-[270deg] text-center justify-center items-center w-[22px] h-[163px] left-[70px] right-0 rounded-none border-none justify-center items-center cursor-pointer" id="prev-5">
+									<i class="icon-right"></i>
+								</div>
+
+								<div class="rounded-none inline-flex top-[315px] transform rotate-[90deg] absolute z-[2] justify-center items-center cursor-pointer bg-[#eee] w-[25px] h-[170px] left-[65px] right-0 border-none bottom-0" id="next-5">
+									<i class="icon-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Gallery two-->
+					<div id="tab2" class="tab-content hidden p-4 bg-white">
+						<div>
+							<div class="swiper-container gallery-top overflow-hidden relative">
+
+								<div class="swiper-wrapper">
+
+									<div class="swiper-slide translate-z-0 backface-hidden flex-shrink-0 w-full h-full relative transition-transform block">
+										<div class="flex w-full mx-0">
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla1.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla2.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide translate-z-0 backface-hidden flex-shrink-0 w-full h-full relative transition-transform block">
+										<div class="flex w-full mx-0">
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla1.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla2.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide translate-z-0 backface-hidden flex-shrink-0 w-full h-full relative transition-transform block">
+										<div class="flex w-full mx-0">
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla1.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla2.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide translate-z-0 backface-hidden flex-shrink-0 w-full h-full relative transition-transform block">
+										<div class="flex w-full mx-0">
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla1.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla2.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide translate-z-0 backface-hidden flex-shrink-0 w-full h-full relative transition-transform block">
+										<div class="flex w-full mx-0">
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla1.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla1.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+
+											<div class="image-container main-slider-item h-[216px] block rounded-[5px] mb-[18px] p-0 relative w-1/2">
+												<a href="#" class="main-image tile" data-scale="1.5"
+													isClicked="false" data-image="./assets/img/tesla2.jpg">
+													<div class="zoom-box"></div>
+												</a>
+												<div class="zoom-image"></div>
+												<a href="./assets/img/tesla2.jpg" data-fancybox="gallery-1"
+													class="zoomin">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M9 21H3M3 21V15M3 21L10 14M15 3H21M21 3V9M21 3L14 10"
+															stroke="#091123" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="y-btn y-prev" id="prev">
+									<i class="icon-right"></i>
+								</div>
+
+								<div class="y-btn y-next" id="next">
+									<i class="icon-right"></i>
+								</div>
+							</div>
+							<div class="swiper-container gallery-thumbs overflow-hidden relative">
+
+								<div class="swiper-wrapper relative w-full h-full z-[1] flex transition-transform [transition-timing-function:var(--swiper-wrapper-transition-timing-function,initial)] box-content">
+
+									<div class="swiper-slide">
+										<div class="flex w-full mx-0">
+											<a data-bs-toggle="pill" href="#whole_two" class="sub-slider-item w-full pl-0 pr-0 flex h-[75px] rounded-[5px]">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="flex w-full mx-0">
+											<a data-bs-toggle="pill" href="#whole_two" class="sub-slider-item w-full pl-0 pr-0 flex h-[75px] rounded-[5px]">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="flex w-full mx-0">
+											<a data-bs-toggle="pill" href="#whole_two" class="sub-slider-item w-full pl-0 pr-0 flex h-[75px] rounded-[5px]">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="flex w-full mx-0">
+											<a data-bs-toggle="pill" href="#whole_two" class="sub-slider-item w-full pl-0 pr-0 flex h-[75px] rounded-[5px]">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="flex w-full mx-0">
+											<a data-bs-toggle="pill" href="#whole_two" class="sub-slider-item w-full pl-0 pr-0 flex h-[75px] rounded-[5px]">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+												<img class="w-1/2 h-full object-cover object-center rounded-[5px]" src="./assets/img/tesla1.jpg" alt="404">
+											</a>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="y-btn y-prev" id="prev-1">
+									<i class="icon-right"></i>
+								</div>
+
+								<div class="y-btn y-next" id="next-1">
+									<i class="icon-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<script>
+						const tab1Btn = document.getElementById('tab1Btn');
+						const tab2Btn = document.getElementById('tab2Btn');
+						const tab1 = document.getElementById('tab1');
+						const tab2 = document.getElementById('tab2');
+
+						tab1Btn.addEventListener('click', () => {
+							tab1.classList.remove('hidden');
+							tab2.classList.add('hidden');
+							tab1Btn.classList.replace('bg-gray-200', 'bg-blue-600');
+							tab1Btn.classList.replace('text-gray-800', 'text-white');
+							tab2Btn.classList.replace('bg-blue-600', 'bg-gray-200');
+							tab2Btn.classList.replace('text-white', 'text-gray-800');
+						});
+
+						tab2Btn.addEventListener('click', () => {
+							tab2.classList.remove('hidden');
+							tab1.classList.add('hidden');
+							tab2Btn.classList.replace('bg-gray-200', 'bg-blue-600');
+							tab2Btn.classList.replace('text-gray-800', 'text-white');
+							tab1Btn.classList.replace('bg-blue-600', 'bg-gray-200');
+							tab1Btn.classList.replace('text-white', 'text-gray-800');
+						});
+					</script>
+
 				</div>
 				
 				<div class="md:w-1/2 rounded-lg">
@@ -520,9 +958,9 @@
 
 									<button class="w-[240px] py-3 text-white rounded-[10px] border-2 border-green-700 mb-3 text-xl font-medium transition-all duration-300 flex items-center justify-center bg-primary mt-8">Buy</button>
 
-									<button class="w-[240px] py-3 text-[#1d8848] rounded-xl border-2 border-[#1d8848] mb-3 text-xl font-medium transition duration-300 flex items-center justify-center bg-white hover:bg-primary hover:text-white">Add to Cart</button>
+									<button class="w-[240px] py-3 text-[#1d8848] rounded-xl border-2 border-[#1d8848] mb-3 text-xl font-medium transition duration-300 flex items-center justify-center bg-white hover:bg-[#1d8848] hover:text-white">Add to Cart</button>
 
-									<button class="w-[240px] py-3 text-[#1d8848] rounded-xl border-2 border-[#1d8848] mb-3 text-xl font-medium transition duration-300 flex items-center justify-center bg-white hover:bg-primary hover:text-white">Add to Watch</button>
+									<button class="w-[240px] py-3 text-[#1d8848] rounded-xl border-2 border-[#1d8848] mb-3 text-xl font-medium transition duration-300 flex items-center justify-center bg-white hover:bg-[#1d8848] hover:text-white">Add to Watch</button>
 
 								</div>
 							</div>
@@ -584,15 +1022,15 @@
 												</div>
 											</div>
 										</div>
-										<div class="product-electronic-items flex">
+										<div class="product-electronic-items flex mb-5">
 											<div class="product-electronic-items-title border-none border-0 p-[27px_5px_0_21px]">
 												<p class="mb-0 text-[15px] leading-5 mb-[15px] text-[#444544]">Payments:</p>
 											</div>
-											<div class="product-electronic-items-value flex mb-3 items-center pt-[13px] px-2">
-												<img src="./assets/img/visa.png" alt="404" class="visa-icon !w-[46px] h-[30px] mr-[10px] border border-blue-500 rounded-[3px]">
-												<img src="./assets/img/card.png" alt="404" class="!w-[46px] h-[30px] mr-[10px] border border-[red] rounded-[3px]">
-												<img src="./assets/img/discover.png" alt="404" class="discover-icon !w-[46px] h-[30px] mr-[10px] border border-[red] rounded-[3px]">
-												<img src="./assets/img/paypal.png" alt="404" class="paypal-icon !w-[46px] h-[30px] mr-[10px] border border-[red] rounded-[3px]">
+											<div class="product-electronic-items-value flex items-center flex-wrap gap-2">
+												<img src="./assets/img/visa.png" alt="404" class="visa-icon !w-[46px] h-[30px] border border-blue-500 rounded-[3px]">
+												<img src="./assets/img/card.png" alt="404" class="!w-[46px] h-[30px] border border-[red] rounded-[3px]">
+												<img src="./assets/img/discover.png" alt="404" class="discover-icon !w-[46px] h-[30px] border border-[red] rounded-[3px]">
+												<img src="./assets/img/paypal.png" alt="404" class="paypal-icon !w-[46px] h-[30px] border border-[red] rounded-[3px]">
 											</div>
 										</div>
 									</div>
@@ -608,7 +1046,7 @@
 													The Logz
 													<div class="product-options-seller-hover min-w-[327px] min-h-[268px] rounded-xl border border-[#b7b7b7] bg-white p-1.5 invisible opacity-0 absolute left-[87%] -translate-x-1/2 top-[calc(100%+5px)] transition-all duration-500 ease-linear z-10">
 														<div class="product-options-seller-hover-top">
-															<img src="../assets/img/avatar.png" alt="404">
+															<img src="./assets/img/avatar.png" alt="404">
 															<span class="">95%</span>
 															<div>
 																<h3>Positive Feedback</h3>
@@ -963,7 +1401,7 @@
 												$('.quality-' + val).find('input').focus()
 											}
 											const container = document.querySelector('.rewiew-quality');
-
+											/*
 											document.addEventListener('click', function (event) {
 												const isClickInside = container.contains(event.target);
 												if (!isClickInside) {
@@ -978,6 +1416,7 @@
 													});
 												}
 											});
+											*/
 
 											function checkValue(input) {
 												if (input.value < 0) {
@@ -1461,6 +1900,9 @@
         </div>
     </main>
 	<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="assets/js/y-script.js"></script>
+	<script src="./assets/js/jquery.fancybox.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 </html>
