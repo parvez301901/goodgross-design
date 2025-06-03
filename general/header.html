@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+	<!-- New CSS -->
+	<link rel="stylesheet" href="../assets/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/fonts/inter/stylesheet.css">
+    <link rel="stylesheet" href="../assets/fonts/icomoon-2/style.css">
+	<style type="text/css">
+		@theme {
+			/*background*/
+			--bg-primary: #1d8848;
+			--bg-light-primary: #00ae5a;
+			--bg-primary-shadow: #D3F3CD;
+			--bg-white: #ffffff;
+			--bg-gray-white: #f8f8f8;
+
+			/* Colors */
+			--primary: 29, 136, 72;
+			--black: 14, 17, 17;
+			--white: 255, 255, 255;
+			--form-height: 40px;
+
+			/* Text */
+			--text-primary: #1d8848;
+			--text-light-primary: #00ae5a;
+			--text-color: #333;
+			--text-light: #ffffff;
+			--text-muted: #939995;
+			--text-input: #676767;
+
+			/* Fonts */
+			--font-main: "Inter", sans-serif;
+			--font-heading: 'Georgia', serif;
+
+			/* Borders */
+			--border-radius-4: 4px;
+			--border-color: #ddd;
+			--border-base-width: 1px;
+			--border-color-light: #D9D9D9;
+		}
+
+		@layer base {
+			:root {
+				--bg-primary: #1d8848;
+				--bg-light-primary: #00ae5a;
+			}
+		}
+
+		@layer utilities {
+			.bg-primary {
+				background-color: var(--bg-primary);
+			}
+			.bg-light-primary {
+				background-color: var(--bg-light-primary);
+			}			
+			.text-primary {
+				color: var(--bg-primary)text-primary-dark {
+				color: var(--bg-primary);
+			}
+			.border-primary {
+				border-color: var(--bg-primary);
+			}
+		}
+
+
+	</style>
+	<!-- <link rel="stylesheet" href="./assets/structure/header.css"> -->
+    
+	<title>Home</title>
+</head>
+
+<body>
+    <header>
+		<div class="header_top relative z-[9999] bg-primary">
+			<div class="container">
+				<div class="relative flex items-center space-between">
+					<div class="header_logo flex justify-center items-center">
+						<a href="#" class="h-auto block w-full">
+							<img class="img-fluid" src="../assets/img/logo.svg" alt="logo">
+						</a>
+					</div>
+					<div class="flex flex-1 relative">
+						<div class="absolute top-2 left-11">
+							<select name="select_search_option" class="text-[#7F7F7F] text-[15px] font-medium border border-[#74b08c] py-2 pl-2.5 pr-1.5 rounded-xl">
+								<option value="wholesale">Wholesale</option>
+								<option value="retailer">Retailer</option>
+								<option value="all">All</option>
+							</select>
+						</div>
+
+						<input type="text" placeholder="Search for ..."	class="h-14 rounded-[50px] border-none py-0 px-[135px] mx-9 w-full text-[var(--text-input)] text-[25px] font-medium bg-white">
+						<div class="absolute flex items-center right-9 top-1 bottom-1">
+							<div class="flex justify-center items-center h-12 w-12 bg-[#00AE5A] text-white text-[32px] rounded-full mx-1">
+								<i class="icon-camera"></i>
+							</div>
+							<div class="flex justify-center items-center h-12 w-12 bg-[#00AE5A] text-white text-[32px] rounded-full mx-1">
+								<i class="icon-search"></i>
+							</div>
+						</div>
+					</div>
+
+					<div class="header_auth header_link relative ml-6 flex justify-center items-center group">
+						<i class="icon-user text-[37px] text-white mb-0 mr-2.5"></i>
+						<span class="text-white text-xl">Sign In</span>
+
+						<div class="invisible absolute top-full z-[999] w-[250px] min-h-[300px] pt-2.5 opacity-0 transition-all duration-300 ease-linear group-hover:visible group-hover:opacity-100 left-1/2 -translate-x-1/2">
+							<div class="relative z-[999] bg-white p-[30px_40px_10px] h-full rounded-[20px] shadow-[2px_2px_5px_rgba(0,0,0,0.2)] before:content-[''] before:w-4 before:h-4 before:bg-white before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1 before:rotate-45 before:z-[9999]">
+								<a href="#" class="block font-inter not-italic font-normal text-[20px] leading-[20px] text-[#15ad52] text-center mb-[10px]">Welcome back</a>
+								<a href="#" class="flex items-center justify-center bg-light-primary border-2 border-[#00bf63] rounded-[5px] font-inter not-italic font-normal text-[20px] leading-[10px] text-white h-[35px] w-[170px] mb-[13px] mx-auto transition-all duration-500 ease-linear">Sign in</a>
+								<a href="#" class="flex items-center justify-center bg-transparent border-2 border-[#00bf63] rounded-[5px] font-inter not-italic font-normal text-[20px] leading-[10px] text-[#00bf63] h-[35px] w-[170px] mb-[13px] mx-auto transition-all duration-500 ease-linear transform hover:scale-110">Register</a>
+								<div class="relative text-center font-inter not-italic font-normal text-[20px] leading-[20px] text-[#676767] w-[170px] mx-auto mb-[6px] before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[69px] before:h-px before:bg-[#676767] after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-[69px] after:h-px after:bg-[#676767]">
+									or
+								</div>
+								<div class="flex items-center justify-between mb-[6px]">
+									<a href="#" class="block w-[34px] h-[34px] mb-[4px]">
+										<img class="w-full h-full" src="../assets/img/facebook (1).png" alt="404">
+									</a>
+									<a href="#" class="block w-[34px] h-[34px] mb-[4px]">
+										<img class="w-full h-full" src="../assets/img/search.png" alt="404">
+									</a>
+									<a href="#" class="block w-[34px] h-[34px] mb-[4px]">
+										<img class="w-full h-full" src="../assets/img/linkedin (1).png" alt="404">
+									</a>
+									<a href="#" class="block w-[34px] h-[34px] mb-[4px]">
+										<img class="w-full h-full" src="../assets/img/twitter (1).png" alt="404">
+									</a>
+								</div>
+								<p class="font-inter not-italic font-normal text-[7px] leading-[10px] text-center text-black mb-[16px]">
+									By sliding to Continue with or Create My Account , I agree to Goodgross.com Free
+									Membership Agreement and Receive Marketing Materials
+								</p>
+								<ul class="block list-none mx-auto m-0">
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">My Goodgross</a></li>
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">Account</a></li>
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">Orders</a></li>
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">Saved</a></li>
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">My Posts</a></li>
+									<li><a class="block font-inter not-italic font-normal text-[15px] leading-4.5 text-[#676767] mb-2.5 transition-all duration-200 ease-linear hover:text-[#1d8848]" href="#">Messages</a></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="ml-6">
+						<a class="text-white text-base font-medium leading-5 px-1.5 py-2 rounded-[10px] border-2 border-white bg-transparent transition-all duration-500 ease-linear">
+							Post for free
+						</a>
+					</div>
+
+					<div class="shopping-icon header_link flex flex-col justify-center items-center cursor-pointer ml-6">
+						<i class="icon-cart text-[27px] text-white"></i>
+						<span class="text-white text-xs font-normal leading-[130%]">Cart</span>
+					</div>
+					
+					<div class="header-whishlist header_link flex flex-col justify-center items-center ml-6">
+						<i class="icon-heart text-[27px] text-white"></i>
+						<span class="text-white text-xs font-normal leading-[130%]">Saved</span>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="header_middle bg-light-primary">
+			<div class="container">
+				<div class="header_middle_wrapper flex">
+					<ul class="flex py-1.5">
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Today's Deals</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Coupons</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Top 100 Goods</a>
+						</li>
+						<li class="mr-16 last:mr-0">
+							<a href="#" class="text-white text-xl font-normal leading-[130%]">Discount</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="header_bottom block border-b-3 border-[#b7b7b7]">
+			<div class="container">
+				<div class="header_bottom_wrapper relative">
+					<ul class="flex items-center justify-center">
+						<li>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Retail market</a>
+						</li>
+						<li>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Home</a>
+						</li>
+						<li>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Manufacturers & Suppliers</a>
+						</li>
+						<li>
+							<a href="#" class="block px-6 py-3 text-xl font-normal leading-[130%] text-[#676767] relative">Viewed</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<script src="../assets/js/jquery-3.2.1.slim.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+</html>
