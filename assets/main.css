@@ -137,3 +137,48 @@ background-color: rgb(var(--color-gray3));
 	top: -5px;
 	right: 65px;
 }
+.sign-with>p:first-child::before {
+    content: "";
+    position: absolute;
+    width: 178px;
+    height: 1px;
+    background-color: #676767;
+    display: block;
+    left: -25px;
+    top: 50%;
+}
+.sign-with>p:first-child::after {
+    content: "";
+    position: absolute;
+    width: 178px;
+    height: 1px;
+    background-color: #676767;
+    display: block;
+    right: -25px;
+    top: 50%;
+}
+/*account create detail*/
+.account-create-tab.border-blue-600 span {
+	background-color: #1d8848;
+}
+/**/
+.signinwithdivider::before {
+    content: "";
+    position: absolute;
+    width: 178px;
+    height: 1px;
+    background-color: #676767;
+    display: block;
+    left: -25px;
+    top: 50%;
+}
+.signinwithdivider::after {
+    content: "";
+    position: absolute;
+    width: 178px;
+    height: 1px;
+    background-color: #676767;
+    display: block;
+    right: -25px;
+    top: 50%;
+}

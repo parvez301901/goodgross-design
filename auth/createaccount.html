@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+	<!-- New CSS -->
+	<link rel="stylesheet" href="../assets/main.css">
+	<link rel="stylesheet" href="../assets/structure/product-retail.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/fonts/inter/stylesheet.css">
+    <link rel="stylesheet" href="../assets/fonts/icomoon-2/style.css">
+	<link rel="stylesheet" href="../assets/libs/jquery.fancybox.min.css"/>
+	<link rel="stylesheet" href="../assets/libs/swiper.min.css">
+	<style type="text/css">
+		@theme {
+			/*background*/
+			--bg-primary: #1d8848;
+			--bg-light-primary: #00ae5a;
+			--bg-primary-shadow: #D3F3CD;
+			--bg-white: #ffffff;
+			--bg-gray-white: #f8f8f8;
+
+			/* Colors */
+			--primary: 29, 136, 72;
+			--black: 14, 17, 17;
+			--white: 255, 255, 255;
+			--form-height: 40px;
+
+			/* Text */
+			--text-primary: #1d8848;
+			--text-light-primary: #00ae5a;
+			--text-color: #333;
+			--text-light: #ffffff;
+			--text-muted: #939995;
+			--text-input: #676767;
+
+			/* Fonts */
+			--font-main: "Inter", sans-serif;
+			--font-heading: 'Georgia', serif;
+
+			/* Borders */
+			--border-radius-4: 4px;
+			--border-color: #ddd;
+			--border-base-width: 1px;
+			--border-color-light: #D9D9D9;
+		}
+
+		@layer base {
+			:root {
+				--bg-primary: #1d8848;
+				--bg-light-primary: #00ae5a;
+			}
+		}
+
+		@layer utilities {
+			.bg-primary {
+				background-color: var(--bg-primary);
+			}
+			.bg-light-primary {
+				background-color: var(--bg-light-primary);
+			}
+			.back-primary {
+				background-color: var(--bg-primary);
+			}
+			.text-primary {
+				color: var(--bg-primary);
+			}
+			.text-light-primary {
+				color: var(--bg-light-primary);
+			}
+			.border-primary {
+				border-color: var(--bg-primary);
+			}
+			.border-light-primary {
+				border-color: var(--bg-light-primary);
+			}
+
+			@keyframes fade-slide {
+				0% {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.animate-fade-slide {
+				animation: fade-slide 0.4s ease-out forwards;
+			}
+			p {
+				font-size: 15px;
+				line-height: 20px;
+				color: #000000;
+				margin-bottom: 12px;
+			}
+			.detail-description-text p {
+				font-weight: 300;
+			}
+		}
+
+	</style>    
+	<title>Sign Up</title>
+</head>
+
+<body>
+	<section class="mt-[30px] mb-[100px]">
+		<div class="container">
+			<div class="registration-title text-center max-w-[557px] mx-auto">
+				<img src="../assets/img/logo-create.jpg" alt="" class="w-[470px] m-[0_auto]" />
+				<h2 class="text-[30px] text-[#333] mb-[14px]">Create a GoodGross account</h2>
+			</div>
+
+			<div class="">
+				<!-- Tab buttons -->
+				<div class="flex mb-4 max-w-[510px] mx-auto mb-[30px] justify-center">
+					<button class="account-create-tab tab-btn px-4 py-2 text-blue-600 border-b-2 border-blue-600 border-none flex items-center text-[20px] leading-[20px] text-[#333]" data-tab="1"><span class="w-[25px] h-[25px] block border-[3px] border-[#d9d9d9] bg-[#f5f5f5] rounded-[5px] mr-[20px]"></span> Personal Account</button>
+					<button class="account-create-tab tab-btn px-4 py-2 text-gray-600 hover:text-blue-600 flex items-center text-[20px] leading-[20px] text-[#333] border-none" data-tab="2"><span class="w-[25px] h-[25px] block border-[3px] border-[#d9d9d9] bg-[#f5f5f5] rounded-[5px] mr-[20px]"></span> Business Account</button>
+				</div>
+
+				<!-- Tab content -->
+				<div class="tab-content space-y-4">
+					<div class="tab-pane flex gap-8" data-content="1">
+
+						<div class="w-full md:w-1/2">
+
+							<form>
+								<div class="max-w-[540px] grid grid-cols-1 md:grid-cols-2 gap-3 bg-white rounded-xl">
+									<div>										
+										<input type="text" id="fname" name="fname" placeholder="First Name" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[15px]" />
+									</div>
+									<div>										
+										<input type="text" id="lname" name="lname" placeholder="Last Name" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[15px]" />
+									</div>
+									<div>										
+										<input type="email" id="email" name="email" placeholder="Email" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[15px]" />
+									</div>
+									<div>										
+										<select id="country" name="country" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px]">
+											<option value="">--Select Country--</option>
+											<option value="IN">India</option>
+											<option value="US">United States</option>
+											<option value="UK">United Kingdom</option>
+											<option value="CA">Canada</option>
+											<!-- Add more countries as needed -->
+										</select>
+									</div>
+								</div>
+
+								<div class="max-w-[540px] pt-3">
+									<div class="input-password relative">
+										<input type="password" placeholder="Password" id="passwordShow" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[1px]" />
+										<div class="myCheckbox !w-[18px] !h-[18px] block absolute top-[13px] right-[60px]">
+											<span class="absolute w-full h-full left-0 top-0 block bg-[#1d8848] border-[3px] border-[#d9d9d9]"></span>
+											<input type="checkbox" id="checkBox3" class="absolute left-0 top-0 !w-[120%] !h-[106%] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[15px]" />
+										</div>
+										<span class="absolute top-[10px] right-[7px]">Show</span>
+									</div>
+
+									<script>
+										document.getElementById("checkBox3").onclick = function () {
+											if (this.checked) {
+											document.getElementById("passwordShow").type = "text";
+											} else {
+											document.getElementById("passwordShow").type = "password";
+											}
+						
+											myCheck('checkBox3')
+										};
+									</script>
+								</div>
+
+								<div class="max-w-[540px] pt-3">
+									<div class="input-password relative">
+										<input type="password" placeholder="Retype Password" id="passwordShow1" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[10px]" />
+										<div class="myCheckbox !w-[18px] !h-[18px] block absolute top-[13px] right-[60px]">
+											<span class="absolute w-full h-full left-0 top-0 block bg-[#1d8848] border-[3px] border-[#d9d9d9]"></span>
+											<input type="checkbox" id="checkBox4" class="absolute left-0 top-0 !w-[120%] !h-[106%] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[15px]" />
+										</div>
+										<span class="absolute top-[10px] right-[7px]">Show</span>
+									</div>
+
+									<script>
+										document.getElementById("checkBox4").onclick = function () {
+											if (this.checked) {
+											document.getElementById("passwordShow1").type = "text";
+											} else {
+											document.getElementById("passwordShow1").type = "password";
+											}
+											myCheck('checkBox4')
+										};
+									</script>
+								</div>
+							</form>
+
+							<div class="flex max-w-[540px]">
+								<p class="tracking-[0] text-center flex-1 text-[#333] font-normal text-base leading-[20px] max-w-[585px] mb-[11px] px-4">
+									By clicking on the Register button, you agree to the GoodGross's <a hrtef="#" style="color: #1d8848">Terms of Service</a>   and <a href="#" style="color: #1d8848">Privacy Policy</a> .
+								</p>
+							</div>
+							<button type="button" class="signBtn max-w-[540px] bg-[#1d8848] text-white text-2xl transition duration-300 ease-in-out h-[63px] w-full border border-[#1d8848] rounded-[20px] cursor-pointer normal-case m-0">Register</button>
+							<p class="max-w-[540px] tracking-[0] text-center text-[#333] font-normal text-[21px] leading-[20px] my-[17px] p-0">Already have an account?</p>
+							<button type="button" class="signBtn max-w-[540px] text-2xl transition duration-300 ease-in-out h-[63px] rounded-[20px] w-full bg-white text-[#1d8848] border-[2px] border-[#1d8848] m-0">Sign in</button>						
+
+						</div>
+
+						<div class="w-full md:w-1/2">
+							<div class="registerFrom">
+								<p class="text-[20px] font-medium leading-[20px] tracking-[0] text-[#1d8848] mb-[20px] text-center m-0 p-0">Pros of a Personal Account</p>
+								<ul>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span> Convenient for buying products</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span>Specially designed for selling personal stuffs</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span>Limited Liability</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span> Easy to get paid</li>
+								</ul>
+								<div class="sign-with-others max-w-[500px] mx-auto mt-[35px] mb-[25px]">
+									<p class="signinwithdivider text-[25px] font-normal leading-[20px] tracking-[0] text-[#676767] relative mb-[30px] text-center m-0 p-0">Or, Sign in With</p>
+									<ul class="flex items-center justify-between">
+										<li>
+											<a href=""><img src="../assets/img/facebook.png" alt="" class="h-[60px]" /></a>
+										</li>
+										<li>
+											<a href=""><img src="../assets/img/twitter.png" alt="" class="h-[60px]" /></a>
+										</li>
+										<li>
+											<a href=""><img src="../assets/img/linkedin.png" alt="" class="h-[60px]" /></a>
+										</li>
+										<li>
+											<a href=""><img src="../assets/img/apple-pay.png" alt="" class="h-[60px]" /></a>
+										</li>
+										<li>
+											<a href=""><img src="../assets/img/search.png" alt="" class="h-[60px]" /></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="tab-pane flex gap-8 hidden" data-content="2">
+
+						<div class="w-full md:w-1/2">
+							<div class="registerFrom">
+								<p class="text-[20px] font-medium leading-[20px] tracking-[0] text-[#1d8848] mb-[20px] text-center m-0 p-0">Pros of a Personal Account</p>
+								<ul>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span  class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span> Convenient for buying products</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span  class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span>Specially designed for selling personal stuffs</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span  class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span>Limited Liability</li>
+									<li class="mb-[15px] flex items-center text-[20px] font-normal leading-[20px] tracking-[0] text-[#333] ml-[100px] m-0 p-0"><span  class="w-[13px] h-[13px] block rounded-full bg-[#1d8848] mr-[10px]"></span> Easy to get paid</li>
+								</ul>
+								<div class="sign-with-others max-w-[500px] mx-auto mt-[35px] mb-[25px]">
+									<p class="signinwithdivider text-[25px] font-normal leading-[20px] tracking-[0] text-[#676767] relative mb-[30px] text-center m-0 p-0">Or, Sign in With</p>
+									<ul class="flex items-center justify-between">
+										<li><a href=""><img src="../assets/img/facebook.png" alt="" class="h-[60px]" /></a></li>
+										<li><a href=""><img src="../assets/img/twitter.png" alt="" class="h-[60px]" /></a></li>
+										<li><a href=""><img src="../assets/img/linkedin.png" alt="" class="h-[60px]" /></a></li>
+										<li><a href=""><img src="../assets/img/apple-pay.png" alt="" class="h-[60px]" /></a></li>
+										<li><a href=""><img src="../assets/img/search.png" alt="" class="h-[60px]" /></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="w-full md:w-1/2">
+
+							<div class="max-w-[540px] grid grid-cols-1 md:grid-cols-2 gap-3 bg-white rounded-xl">
+								<div class="w-full">
+									<input name="bname" type="text" placeholder="Business Name" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[15px]" />
+								</div>
+								<div class="w-full">
+									<select name="" id="" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px]">
+									<option value="">Business Type</option>
+									<option value="">Business Type 2</option>
+									<option value="">Business Type 3</option>
+									</select>
+								</div>
+								<div class="w-full">
+									<select name="" id="" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px]">
+									<option value="">Select Country</option>
+									<option value="">United States 2</option>
+									<option value="">United States 3</option>
+									</select>
+								</div>
+
+								<div class="w-full">
+									<select name="" id="" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px]">
+										<option value="">City / State</option>
+										<option value="">United States 2</option>
+										<option value="">United States 3</option>
+									</select>
+								</div>
+								<div class="w-full">
+									<select name="" id="" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px]">
+										<option value="">City / State</option>
+										<option value="">United States 2</option>
+										<option value="">United States 3</option>
+									</select>
+								</div>
+								<div class="w-full">
+									<input type="text" placeholder="Business email" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[15px]" />
+								</div>
+
+							</div>
+								
+							<div class="max-w-[540px] pt-3">
+								<div class="input-password relative">
+									<input type="password" placeholder="Password" id="passwordShow3" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[1px]" />
+									<div class="myCheckbox !w-[18px] !h-[18px] block absolute top-[13px] right-[60px]">
+										<span class="absolute w-full h-full left-0 top-0 block bg-[#1d8848] border-[3px] border-[#d9d9d9]"></span>
+										<input type="checkbox" id="checkBox2" class="absolute left-0 top-0 !w-[120%] !h-[106%] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[15px]" />
+									</div>
+									<span class="absolute top-[10px] right-[7px]">Show</span>
+								</div>
+
+								<script>
+									document.getElementById("checkBox2").onclick = function () {
+										if (this.checked) {
+										document.getElementById("passwordShow3").type = "text";
+										} else {
+										document.getElementById("passwordShow3").type = "password";
+										}
+					
+										myCheck('checkBox2')
+									};
+								</script>
+							</div>
+
+							<div class="max-w-[540px] pt-3">
+								<div class="input-password relative">
+									<input type="password" placeholder="Retype Password" id="passwordShow4" class="w-full h-[44px] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[10px]" />
+									<div class="myCheckbox !w-[18px] !h-[18px] block absolute top-[13px] right-[60px]">
+										<span class="absolute w-full h-full left-0 top-0 block bg-[#1d8848] border-[3px] border-[#d9d9d9]"></span>
+										<input type="checkbox" id="checkBox1" class="absolute left-0 top-0 !w-[120%] !h-[106%] border-[2px] border-[#d9d9d9] rounded-[7px] p-[10px] mb-[15px]" />
+									</div>
+									<span class="absolute top-[10px] right-[7px]">Show</span>
+								</div>
+
+								<script>
+									document.getElementById("checkBox1").onclick = function () {
+										if (this.checked) {
+										document.getElementById("passwordShow4").type = "text";
+										} else {
+										document.getElementById("passwordShow4").type = "password";
+										}
+										myCheck('checkBox1')
+									};
+								</script>
+							</div>
+
+							<div class="flex max-w-[540px]">
+								<p class="tracking-[0] text-center flex-1 text-[#333] font-normal text-base leading-[20px] max-w-[585px] mb-[11px] px-4">
+									By clicking on the Register button, you agree to the GoodGross's <a hrtef="#" style="color: #1d8848">Terms of Service</a>   and <a href="#" style="color: #1d8848">Privacy Policy</a> .
+								</p>
+							</div>
+							<button type="button" class="signBtn max-w-[540px] bg-[#1d8848] text-white text-2xl transition duration-300 ease-in-out h-[63px] w-full border border-[#1d8848] rounded-[20px] cursor-pointer normal-case m-0">Register</button>
+							<p class="max-w-[540px] tracking-[0] text-center text-[#333] font-normal text-[21px] leading-[20px] my-[17px] p-0">Already have an account?</p>
+							<button type="button" class="signBtn max-w-[540px] text-2xl transition duration-300 ease-in-out h-[63px] rounded-[20px] w-full bg-white text-[#1d8848] border-[2px] border-[#1d8848] m-0">Sign in</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="../assets/js/jquery-3.2.1.slim.min.js"></script>
+	<script src="../assets/js/swiper.min.js"></script>
+	<script src="../assets/js/y-script.js"></script>
+	<script src="../assets/js/jquery.fancybox.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.tab-btn').click(function () {
+				const tabId = $(this).data('tab');
+
+				// Update active tab button
+				$('.tab-btn').removeClass('text-blue-600 border-blue-600 border-b-2').addClass('text-gray-600');
+				$(this).removeClass('text-gray-600').addClass('text-blue-600 border-blue-600 border-b-2');
+
+				// Show matching content
+				$('.tab-pane').addClass('hidden');
+				$(`.tab-pane[data-content="${tabId}"]`).removeClass('hidden');
+			});
+		});
+	</script>
+	</body>
+</html>
